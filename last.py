@@ -4,14 +4,13 @@ sumOfNonPrime = 0
 while inputString.lower() != "stop":
     try:
         num = int(inputString)
-        flag = False
-    
+        d=0
         if num >= 0:
-            for i in range(2, num):
+            prime = True
+            for i in range(2, int(num**0.5)+1):
                 if num % i == 0:
-                    flag == True
-                    break
-            if not(flag):
+                    d+=1
+            if d<=0:
                 sumOfPrime += num
             else:
                 sumOfNonPrime += num
